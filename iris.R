@@ -42,4 +42,16 @@ barplot(
   col = c("lavender", "pink"),
   legend.text = TRUE,
   main = "Stacked Bar Chart: Sepal vs Petal Length"
+
+)
+group_mean <- rbind(
+  Sepal = tapply(iris$Sepal.Width, iris$Species, mean),
+  Petal = tapply(iris$Petal.Width, iris$Species, mean)
+)
+barplot(
+  group_mean,
+  beside = FALSE,
+  col = c("lavender", "pink"),
+  legend.text = TRUE,
+  main = "Stacked Bar Chart: Sepal vs Petal Width"
 )
